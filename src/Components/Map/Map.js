@@ -298,7 +298,7 @@ const Map = () => {
       </div>
 
       <LoadScript
-        googleMapsApiKey={apiKey}
+        googleMapsApiKey="AIzaSyDKqPU_I4U0CDznIotEnvx5WHu7B86YDkQ"
         libraries={libraries}
         id="google-map-script" // Added id prop
       >
