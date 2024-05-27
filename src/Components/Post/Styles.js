@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   height: 100%;
   gap: 1.7rem;
   flex-direction: column;
+  border-radius: 1.5rem;
 
   .heading {
     font-size: 1.5rem;
