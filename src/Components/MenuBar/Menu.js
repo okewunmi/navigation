@@ -30,14 +30,14 @@ const Menu = () => {
             </Link>
           </div>
 
-          <div>
+          {/* <div>
             <Link
               href="#"
               className={`link ${pathname === "#" ? "active" : ""}`}
             >
               <FiSearch />
             </Link>
-          </div>
+          </div> */}
 
           <div>
             <Link
@@ -59,7 +59,10 @@ const Menu = () => {
         </header>
 
         <div>
-          <Link href="#" className={`link ${pathname === "#" ? "active" : ""}`}>
+          <Link
+            href="/Login"
+            className={`link ${pathname === "/Login" ? "active" : ""}`}
+          >
             <VscSignIn />
           </Link>
         </div>

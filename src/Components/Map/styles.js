@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
 
     input {
       height: 2rem;
-      width: 25rem;
+      width: 23rem;
       border-radius: 2rem;
       border: 2px solid #606c38;
       outline: none;
@@ -56,15 +56,34 @@ export const Wrapper = styled.div`
       }
     }
   }
+  .travel {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-left: 39rem;
+    margin-top: 0.6rem;
+    z-index: 100;
+    gap: 0.9rem;
+
+    .card {
+      display: flex;
+      align-self: flex-end;
+      color: red;
+      font-weight: bold;
+      align-items: center;
+
+      .car {
+        font-size: 2rem;
+      }
+    }
+  }
 
   .direction-inputs {
     display: flex;
-    position: absolute;
+
     flex-direction: row;
-    z-index: 100;
+
     gap: 0.4rem;
-    margin-left: 40rem;
-    margin-top: 0.6rem;
 
     .inputs {
       display: flex;
@@ -75,7 +94,7 @@ export const Wrapper = styled.div`
         outline: none;
         padding: 1rem;
         color: #000;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         font-weight: 400;
         background: #fff;
         border-radius: 2rem;
@@ -89,9 +108,19 @@ export const Wrapper = styled.div`
       background: #fff;
       border-radius: 2rem;
       height: 2.1rem;
-      width: 10rem;
+      width: 8rem;
       padding: 0rem 0.3rem;
       color: #000;
+
+      &__2 {
+        border: 2px solid #606c38;
+        outline: none;
+        background: #fff;
+        border-radius: 2rem;
+        height: 2.1rem;
+        width: 5.9rem;
+        padding: 0rem 0.3rem;
+      }
 
       option {
         color: #000;
