@@ -48,14 +48,14 @@ const Menu = () => {
             </Link>
           </div>
 
-          <div>
+          {/* <div>
             <Link
               href="/DashBoard"
               className={`link ${pathname === "/DashBoard" ? "active" : ""}`}
             >
               <MdDashboard />
             </Link>
-          </div>
+          </div> */}
         </header>
 
         <div>
