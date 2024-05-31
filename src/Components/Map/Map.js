@@ -298,11 +298,13 @@ const Map = () => {
       </div>
 
       <LoadScript
+        className="map"
         googleMapsApiKey="AIzaSyDKqPU_I4U0CDznIotEnvx5WHu7B86YDkQ"
         libraries={libraries}
         id="google-map-script" // Added id prop
       >
         <GoogleMap
+          className="map"
           mapContainerStyle={{ height: "100%", width: "100%" }}
           zoom={15}
           center={{ lat: 10.615705, lng: 7.370929 }}

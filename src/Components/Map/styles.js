@@ -142,4 +142,7 @@ export const Wrapper = styled.div`
       }
     }
   }
+  .map {
+    border-radius: 1.5rem;
+  }
 `;

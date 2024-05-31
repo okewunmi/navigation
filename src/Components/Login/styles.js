@@ -26,22 +26,25 @@ export const Content = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
+  border-radius: 1.5rem;
 
   video {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    border-radius: 1.5rem;
   }
   .Overlay {
     position: absolute;
+    border-radius: 1.5rem;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(
       to bottom right,
-      rgba(96, 108, 56, 0.6),
-      rgba(40, 54, 24, 0.4)
+      rgba(96, 108, 56, 0.7),
+      rgba(40, 54, 24, 0.6)
     );
     z-index: 2;
   }
@@ -57,19 +60,23 @@ export const Content = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.8rem;
 
     input {
       background: transparent;
-      outline: 1px solid gainsboro;
+      outline: 1px solid white;
       border-radius: 2rem;
       color: #fff;
-      padding: 0.4rem 1rem;
+      padding: 0.3rem 1rem;
       width: 18rem;
+      transition: all 0.1s;
 
       &:focus {
-        background: #283618;
-        opacity: 0.5;
+        /* background: #283618; */
+        /* opacity: 0.5; */
+        /* outline-offset: 0.25rem; */
+        color: #fff;
+        outline: 2px solid white;
       }
     }
 
@@ -79,27 +86,31 @@ export const Content = styled.div`
       width: 18rem;
       border-radius: 2rem;
       padding: 0.4rem 1rem;
-      margin-top: 0.5rem;
-
+      margin-top: 0.8rem;
       color: #000;
       transition: all 0.4s;
       font-weight: bold;
 
-      &:hover {
+      &:hover,
+      :focus,
+      :active {
         background: #283618;
         color: #fff;
+        outline-offset: 4px;
+        transform: translateX(-5px);
+        outline: 2px solid #283618;
       }
     }
-    .btn-create {
-      color: #fff;
-      margin-top: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
+  }
+  .btn-create {
+    color: #fff;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
 
-      .icon {
-        font-size: 1rem;
-      }
+    .icon {
+      font-size: 1rem;
     }
   }
 `;
