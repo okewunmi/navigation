@@ -1,13 +1,14 @@
 // authContext.js
 "use client";
 import { createContext, useContext, useEffect, useState } from "react";
-import { auth } from "./firebaseConfig";
-import { onAuthStateChanged } from "firebase/auth";
-
+import { auth, db } from "./firebaseConfig";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
 const AuthContext = createContext();
 
-export function AuthProvider({ children }) {
+export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -21,11 +22,31 @@ export function AuthProvider({ children }) {
     return () => unsubscribe();
   }, []);
 
-  return (
-    <AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>
-  );
-}
+  // useEffect(() => {
+  //   const unsubscribe = onAuthStateChanged(auth, async (user) => {
+  //     setUser(user);
+  //     if (user) {
+  //       const docRef = doc(db, "students", user.uid);
+  //       const docSnap = await getDoc(docRef);
+  //       if (docSnap.exists()) {
+  //         setUserData(docSnap.data());
+  //       }
+  //     } else {
+  //       setUserData(null);
+  //     }
+  //   });
+  //   return () => unsubscribe();
+  // }, []);
 
-export function useAuth() {
-  return useContext(AuthContext);
-}
+  const logout = async () => {
+    await signOut(auth);
+  };
+
+  return (
+    <AuthContext.Provider value={{ user, userData, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export const useAuth = () => useContext(AuthContext);
