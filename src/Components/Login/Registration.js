@@ -21,7 +21,7 @@ const Register = () => {
 
   const [formData, setFormData] = useState({
     fullName: "",
-    NDA_NO: "",
+    matricNumber: "",
     email: "",
     phoneNumber: "",
     course: "",
@@ -44,7 +44,7 @@ const Register = () => {
       email,
       password,
       fullName,
-      NDA_NO,
+      matricNumber,
       phoneNumber,
       course,
       department,
@@ -61,7 +61,7 @@ const Register = () => {
       await setDoc(doc(db, "students", user.uid), {
         uid: user.uid,
         fullName,
-        NDA_NO,
+        matricNumber,
         email,
         phoneNumber,
         course,
@@ -72,7 +72,7 @@ const Register = () => {
       setShowSuccess("Registration successful!");
       setForm({
         fullName: "",
-        NDA_NO: "",
+        matricNumber: "",
         email: "",
         phoneNumber: "",
         course: "",
@@ -125,7 +125,7 @@ const Register = () => {
                 <FaUser className="input_box-icon-2" />
                 <input
                   className="input-2"
-                  name="NDA_NO"
+                  name="matricNumber"
                   placeholder="NDA_NO"
                   onChange={handleChange}
                   required
