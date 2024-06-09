@@ -126,7 +126,7 @@ const Register = () => {
                 <input
                   className="input-2"
                   name="NDA_NO"
-                  placeholder="Matric Number"
+                  placeholder="NDA_NO"
                   onChange={handleChange}
                   required
                 />
