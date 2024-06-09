@@ -27,32 +27,16 @@ const page = () => {
   const { userData } = useAuth();
   const [user, setUser] = useState(null);
   const [message, setMessage] = useState("");
-
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
-
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   const { email, password } = formData;
-  //   try {
-  //     await signInWithEmailAndPassword(auth, email, password);
-  //     alert("Login successful!");
-  //     router.push("/");
-  //   } catch (error) {
-  //     console.error("Error logging in:", error);
-  //     alert(error.message);
-  //   }
-  // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { email, password } = formData;
